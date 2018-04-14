@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:beyondpink/intro_page_view.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter/material.dart';
 
-import 'package:beyondpink/app/router/routes.dart';
 import './application.dart';
 
 class AppComponent extends StatefulWidget {
@@ -16,7 +16,7 @@ class AppComponentState extends State<AppComponent> {
 
   AppComponentState() {
     final router = new Router();
-    Routes.configureRoutes(router);
+    //  Routes.configureRoutes(router);
     Application.router = router;
   }
 
@@ -28,7 +28,8 @@ class AppComponentState extends State<AppComponent> {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      onGenerateRoute: Application.router.generator,
+      home: new IntroPageView(),
+      //   onGenerateRoute: Application.router.generator,
     );
     print("initial route = ${app.initialRoute}");
     return app;
